@@ -1,4 +1,4 @@
-import { ChevronRightIcon, Trash2 } from "lucide-react";
+import { ChevronRightIcon, Trash2, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -18,10 +18,11 @@ function Tarefas(props) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => props.onTaskClick(task.id)}
-            className={`bg-slate-400 text-left w-full  text-white p-2 rounded-md ${
-              task.isCompleted && "line-through"
+            className={`bg-slate-400 text-left w-full text-white p-2 rounded-md ${
+              task.isCompleted ? "line-through" : ""
             }`}
-          >
+            >
+            {task.isCompleted && <Check />}
             {task.title}
           </button>
 
