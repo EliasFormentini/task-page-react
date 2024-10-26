@@ -18,7 +18,7 @@ function Tarefas(props) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => props.onTaskClick(task.id)}
-            className={`bg-slate-400 text-left w-full text-white p-2 rounded-md ${
+            className={`bg-slate-400 flex items-center text-left w-full text-white p-2 rounded-md ${
               task.isCompleted ? "line-through" : ""
             }`}
             >
